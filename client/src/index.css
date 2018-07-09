@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: sans-serif;
+  background: rgba(20, 24, 51, 0.79);
+  color: white;
+}
+.App form {
+  max-width: 600px;
+}
