@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import axios from 'axios';
 
 class ContactForm extends Component {
@@ -28,33 +28,35 @@ class ContactForm extends Component {
             name,
             email,
             message
-        })
+        });
+
+
     }
 
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <FormGroup>
-                    <Label for="name">Name:</Label>
+                    <Label htmlFor="name">Name:</Label>
                     <Input
                         type="text"
-                        for="name"
+                        htmlFor="name"
                         onChange={this.handleChange}
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="email">Email:</Label>
+                    <Label htmlFor="email">Email:</Label>
                     <Input
                         type="text"
-                        for="email"
+                        htmlFor="email"
                         onChange={this.handleChange}
                     />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="message">Message:</Label>
+                    <Label htmlFor="message">Message:</Label>
                     <Input
                         type="textarea"
-                        for="message"
+                        htmlFor="message"
                         onChange={this.handleChange}
                     />
                 </FormGroup>
