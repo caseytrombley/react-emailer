@@ -7,13 +7,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/api/form', (req, res) => {
-    console.log(req.body);
+    console.log(`Test, where is req.body? ${req.body.first_name}`);
 
     nodemailer.createTestAccount((err, account) => {
          const htmlEmail = `
             <h3>Contact Details</h3>
             <ul>
-                <li>Name: ${req.body.name}</li>
+                <li>Name: ${req.body.first_name}</li>
                 <li>Email: ${req.body.email}</li>
             </ul>
             <h3>Message</h3>
@@ -35,7 +35,7 @@ app.post('/api/form', (req, res) => {
         // setup email data with unicode symbols
         let mailOptions = {
             from: '"Fred Foo 👻" <foo@example.com>', // sender address
-            to: 'caseytrombley@gmail.com, casey.trombley@libertymutual.com', // list of receivers
+            to: 'caseytrombley@gmail.com', // list of receivers
             subject: 'Hello ✔', // Subject line
             text: req.body.message,
             html: htmlEmail // html body
